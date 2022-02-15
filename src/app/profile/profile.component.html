@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
   <div class="row">
     <div class="col">
       <div class="card">
@@ -6,9 +6,9 @@
           <h4>Github User Search</h4>
         </div>
         <div class="card-body">
-          <form class="form-inline" (submit)="searchUser()">
+          <form class="form-inline" action="index.html" method="post">
             <div class="form-group">
-              <input [(ngModel)]="githubUserQuery" name="user" size="40" type="search" class="form-control" placeholder="github user">
+              <input size="40" type="search" class="form-control" placeholder="github user">
             </div>
             <div class="">
               <input type="submit" class="btn btn-secondary btn-sm" value="Search">
