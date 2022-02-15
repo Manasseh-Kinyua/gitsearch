@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  public userName: string;
+  public userName!: string;
+
+  public getUser() {
+    
+  }
 
   constructor() { }
 
