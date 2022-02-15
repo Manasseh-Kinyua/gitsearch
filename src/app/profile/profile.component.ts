@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
