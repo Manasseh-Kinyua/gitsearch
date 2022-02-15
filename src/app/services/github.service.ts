@@ -11,9 +11,9 @@ export class GithubService {
   constructor(private httpClient: HttpClient) { }
 
   //github profile
-  public getProfile(searchQuery) {
+  public getProfile(searchQuery): Observable<any> {
     let dataUrl = `https://api.github.com/users/${searchQuery}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
-    return this.httpClient.get(dataUrl).pipe(
+    return this.httpClient.get<any>(dataUrl).pipe(
       retry(count 1)
       catchError(this.handleErrors)
     )
