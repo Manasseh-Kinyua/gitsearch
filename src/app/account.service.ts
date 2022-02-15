@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Repo } from './repo';
 import { Observable, observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  acountDetails: User;
+  accountDetails!: User;
   repos: Repo;
   clientid: string = "3dd2666d6db96a58e0aa"
   clientsecret: string = "8951785aaf5c1c732b1092ae0671304fc1a28975"
@@ -39,7 +40,7 @@ export class AccountService {
     let promise = new promise<void>((resolve, reject) =>{
       let apiUrl = this.url + userName + '?client_id='+this.clientid+'&client_secret='+this.clientsecret
       this.http.get<ApiResponse>(apiUrl)
-        .topromise()
+        .toPromise()
         .then(
           (res) => {
             this.accountDetails.login = res!.name
