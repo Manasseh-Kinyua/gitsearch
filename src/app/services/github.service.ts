@@ -20,9 +20,9 @@ export class GithubService {
   }
 
   //github repos
-  public getRepos(searchQuery): Observable<any> {
+  public getRepos(searchQuery): Observable<any[]> {
     let dataUrl = `https://api.github.com/users/${searchQuery}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
-    return this.httpClient.get<any>(dataUrl).pipe(
+    return this.httpClient.get<any[]>(dataUrl).pipe(
       retry(count 1)
       catchError(this.handleErrors)
     )
