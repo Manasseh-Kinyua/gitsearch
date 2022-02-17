@@ -10,11 +10,12 @@ export class ProfileComponent implements OnInit {
 
   public userName!: string;
 
-  public getUser() {
-
-  }
-
   constructor(private accountService: AccountService) { }
+
+    public getUser(userName: any) {
+
+      }
+
 
   ngOnInit(): void {
   }
