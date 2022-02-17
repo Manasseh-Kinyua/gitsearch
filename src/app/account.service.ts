@@ -21,6 +21,7 @@ export class AccountService {
     // this.repos = [];
   }
 
+ // the method to get the data from the api
   getUser(userName: string) {
     interface ApiResponse{
       name: string;
